@@ -401,9 +401,20 @@ const languajeLabels = [
             jobs: [
                 {
                     title: "Desarrollador",
+                    position: "Desarrollador Full Stack",
+                    company: "Singleton",
+                    range: "Mayo 2023 - Septiembre 2023",
+                    description: [
+                        `Desempeñé el rol de Full Stack Developer en Singletón, encargándome del diseño y desarrollo integral de soluciones web y móviles, abarcando tanto el frontend como el backend.`,
+                        `Utilicé diversas tecnologías, incluyendo ReactJS, Flutter y Figma, para la construcción de interfaces de usuario intuitivas.`,
+                        `En el backend, implementé .Net con C# para desarrollar APIs eficientes.`,
+                    ],
+                },
+                {
+                    title: "Desarrollador",
                     position: "Desarrollador",
                     company: "Autónomo",
-                    range: "Marzo 2023 - Actualidad",
+                    range: "Marzo 2023 - Mayo 2023",
                     description: [
                         `Desarrollar e implementar sistemas de inteligencia artificial 
                         conversacional para aplicaciones de mensajería con OpenAI API y WhatsApp API`,
@@ -727,9 +738,20 @@ const languajeLabels = [
             jobs: [
                 {
                     title: "Developer",
+                    position: "Full Stack Developer",
+                    company: "Singleton",
+                    range: "May 2023 - September 2023",
+                    description: [
+                        `As a Full Stack Developer at Singletón, I undertook the design and development of comprehensive web and mobile solutions, addressing both frontend and backend aspects.`,
+                        `I utilized technologies such as ReactJS, Flutter, and Figma to craft intuitive user interfaces.`,
+                        `In the backend, I employed .Net with C# to develop efficient APIs.`,
+                    ],
+                },
+                {
+                    title: "Developer",
                     position: "Developer",
                     company: "Freelancer",
-                    range: "March 2023 - Present",
+                    range: "March 2023 - May 2023",
                     description: [
                         `Developing and implementing conversational 
                         AI systems for messaging applications using 

@@ -62,7 +62,7 @@ export const Experience = () => {
                                 <div className="job">
                                     <div className="title">
                                         <h4 className="position-job">{job.position}</h4>
-                                        <h4 className="color-p"> {`@${job.company}`}</h4>
+                                        <h4 className="color-p "> {`@${job.company}`}</h4>
                                     </div>
                                     <p className="range">{job.range}</p>
                                     <ul>

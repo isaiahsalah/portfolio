@@ -3,7 +3,6 @@ import { colors, fontSize } from "../utils/config";
 
 export const ExperienceBox = styled.div`
 min-height: 100vh;
-
 gap: 20px;
 
     fieldset{
@@ -23,6 +22,7 @@ gap: 20px;
     }
     .position-job{
         text-align: center;
+        
     }
     button{
         margin: 0;
@@ -47,7 +47,7 @@ gap: 20px;
         color:${colors.dark};
         font-weight: 900;
     }
-
+ 
     .job-nav{
         width: 70%;
         display: flex;
@@ -93,8 +93,9 @@ gap: 20px;
     .title{
         width: 100%;
         display: flex;
+        align-items: center;
         font-weight: 600;
-        gap: 10px;
+        gap: 20px;
         
     }
     .range{
@@ -164,13 +165,14 @@ gap: 20px;
         font-weight: 600;
         justify-content: center;
         align-items: center;
-        
+
     }
     .range{
         padding-bottom:20px;
         margin: 0;
         width: 100%;
         color:${colors.primary};
+
         font-weight: 100;
         text-align: center;
     }

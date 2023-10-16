@@ -8,6 +8,17 @@ import { CSSTransition, SwitchTransition } from 'react-transition-group';
 export const Contact = () => {
     const { languaje } = useContext(LanguajeContext)
 
+    const goContact = () => {
+        
+// Cambia la URL de la red social a la que deseas dirigir
+const urlRedSocial = 'https://web.whatsapp.com/send/?phone=59170881108';
+
+// Abre la URL en una nueva ventana o pestaña
+const nuevaVentana = window.open(urlRedSocial, '_blank');
+nuevaVentana.focus();
+
+    };
+
     return (
         <ContactBox className="flex contact" id="contact">
             <SwitchTransition>
@@ -33,7 +44,7 @@ export const Contact = () => {
                                 {languaje.contact.description}
                             </p>
                             <div>
-                                <button> {languaje.contact.button}</button>
+                                <button onClick={goContact}> {languaje.contact.button}</button>
                             </div>
 
 
