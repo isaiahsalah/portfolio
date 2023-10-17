@@ -34,7 +34,7 @@ export const Perfil = () => {
                     <div className="back-image">
                         <img
                             className='image'
-                            src="./assets/images/perfil.jpg"
+                            src="./assets/images/perfil.jpeg"
                             alt="ola"
                         ></img>
                     </div>
