@@ -48,23 +48,37 @@ gap: 20px;
         font-weight: 900;
     }
  
-    .job-nav{
+    .job-container{
         width: 70%;
         display: flex;
+        flex-direction: column;
         margin: 25px  0px;
         align-items: center;
         text-align: left;
         gap: 10px; 
+      
  
+    } 
+    .job-nav{ 
+        justify-content:space-between;
+        margin: 0px;
+        align-items: center;
+        text-align: left;
+        gap: 10px;  
+        display: flex; 
+        height: auto;
     } 
 
     .job-ul{
         width: 22%; 
         border-left: 1px solid ${colors.primary};
+        
+        margin: 0; 
         display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        margin: 0;
+        flex-direction: column;
+        flex-grow: 1;
+ 
+        
     }
 
         //Se personaliza la barra de scroll
@@ -81,13 +95,23 @@ gap: 20px;
 
     .job-li{
         width: 100%;
+      
         margin: 0;
         padding: 0;
+        flex: 1; 
     }
+
+    .job-button{
+        display: flex;
+        height:100%;
+
+    }
+
     .job{
         width: 78%;
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: wrap; 
+        
     }
 
     .title{
@@ -103,6 +127,7 @@ gap: 20px;
         margin: 0;
         color:${colors.primary};
         font-weight: 900;
+        text-align: center;
     }
     .job ul{
         

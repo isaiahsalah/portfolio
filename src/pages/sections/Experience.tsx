@@ -30,25 +30,7 @@ export const Experience = () => {
           </CSSTransition>
         </SwitchTransition>
 
-        <div className="job-nav">
-          <SwitchTransition>
-            <CSSTransition
-              key={languaje.experiences.title}
-              classNames="fade-left-1"
-              addEndListener={(node, done) =>
-                node.addEventListener("transitionend", done, false)
-              }
-            >
-              <ul className="job-ul">
-                {languaje.experiences.experience.map((jo, i) => (
-                  <li className="job-li" key={i}>
-                    <button onClick={() => setJob(jo)}>{jo.title}</button>
-                  </li>
-                ))}
-              </ul>
-            </CSSTransition>
-          </SwitchTransition>
-
+        <div className="job-container">
           {job ? (
             <SwitchTransition>
               <CSSTransition
@@ -58,23 +40,59 @@ export const Experience = () => {
                   node.addEventListener("transitionend", done, false)
                 }
               >
-                <div className="job">
+                <div className="">
                   <div className="title">
                     <h4 className="position-job">{job.position}</h4>
                   </div>
                   <p className="range">{job.range}</p>
-                  <ul>
-                    {job.description.map((task, i) => (
-                      <li key={i}>
-                        <RiArrowRightSFill className="icon" />
-                        <p>{task}</p>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </CSSTransition>
             </SwitchTransition>
           ) : null}
+          <div className="job-nav">
+            <SwitchTransition>
+              <CSSTransition
+                key={languaje.experiences.title}
+                classNames="fade-left-1"
+                addEndListener={(node, done) =>
+                  node.addEventListener("transitionend", done, false)
+                }
+              >
+
+                <ul className="job-ul">
+                  {languaje.experiences.experience.map((jo, i) => (
+                    <li className="job-li" key={i}>
+                      <button className="job-button" onClick={() => setJob(jo)}>{jo.title}</button>
+                    </li>
+                  ))}
+                </ul>
+              </CSSTransition>
+            </SwitchTransition>
+
+            {job ? (
+              <SwitchTransition>
+                <CSSTransition
+                  key={languaje.experiences.title}
+                  classNames="fade-right-1"
+                  addEndListener={(node, done) =>
+                    node.addEventListener("transitionend", done, false)
+                  }
+                >
+                  <div className="job">
+
+                    <ul>
+                      {job.description.map((task, i) => (
+                        <li key={i}>
+                          <RiArrowRightSFill className="icon" />
+                          <p>{task}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </CSSTransition>
+              </SwitchTransition>
+            ) : null}
+          </div>
         </div>
       </div>
     </ExperienceBox>
