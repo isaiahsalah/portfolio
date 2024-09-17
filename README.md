@@ -1,30 +1,62 @@
-# React + TypeScript + Vite
+<h1 align="center">
+<img height=250 src='https://i.imgur.com/LVyld47.png'/>  
+<br/>
+  💫📋My Portfolio 2023📋💫
+</h1>
+<p align="center">
+    Este es 👉🏻<a href="https://www.isaias.lat"> 
+    mi portafolio
+  </a> personal donde comparto algunos de mis proyectos y habilidades como desarrollador web y movil. He construido este sitio con React para demostrar mis habilidades en esta tecnología.</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🧑🏻‍💻 Tecnologías utilizadas
 
-Currently, two official plugins are available:
+- React ⚛️
+- Styled Components
+- HTML
+- CSS
+- JavaScript
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 🚀 Instalación
 
-## Expanding the ESLint configuration
+1. **Importar**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   Clona este repositorio en tu máquina local.
 
-- Configure the top-level `parserOptions` property like this:
+   ```sh
+   # Ejecuta este comando en el CLI.
+   git clone https://github.com/isaiahsalah/portfolio
+   ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+2. **Instalar**
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+   En la línea de comandos, navega hasta el directorio del proyecto y ejecuta el siguiente comando para instalar todas las dependencias.
+
+   ```sh
+   # Instala las dependencias en el CLI.
+   npm install
+   ```
+
+3. **Ejecutar**
+
+   Una vez que se hayan instalado las dependencias, ejecuta este comando para iniciar la aplicación.
+
+   ```sh
+   # Ejecuta este comando en el CLI.
+   npm start
+   ```
+
+4. **Abrir**
+
+   Abre tu navegador y ve a http://localhost:3000 para ver el sitio web.
+
+# 🫣 Uso
+
+Puedes ver el sitio web en vivo 👉🏻[aquí](https://www.isaias.lat).
+
+# 👋🏻 Contacto
+
+Si estás interesado en trabajar conmigo o simplemente quieres decir hola, puedes contactarme a través de [isasalas145@gmail.com](mailto:isasalas145@gmail.com), [Linkedin](https://www.linkedin.com/in/isaiahsalah/), [Whatsapp](https://api.whatsapp.com/send?phone=59170881108&text=%20) o [Twitter](https://twitter.com/isaiahSalah).
+
+![UwU](https://i.giphy.com/media/Bs0GXj3ew6xxK/giphy.webp)
+
+¡Gracias por visitar mi portafolio! 🫶🏻🤓
