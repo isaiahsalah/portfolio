@@ -14,7 +14,7 @@
 - Styled Components
 - HTML
 - CSS
-- JavaScript
+- TypeScript
 
 # 🚀 Instalación
 
