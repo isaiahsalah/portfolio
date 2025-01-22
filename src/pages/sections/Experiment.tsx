@@ -3,9 +3,7 @@ import { AiTwotoneExperiment } from "react-icons/ai";
 import { LanguajeContext } from "../../providers/LanguajeProvider";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { ExperimentBox } from "../../styles/Experiment.styles";
-import BookComp from "../../components/BookComp";
-import CassetteComp from "../../components/CassetteComp";
-import LetterComp from "../../components/LetterComp";
+
 
 export const Experiment = () => {
     const { languaje } = useContext(LanguajeContext);
