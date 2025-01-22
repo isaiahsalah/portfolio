@@ -3,7 +3,9 @@ import { AiTwotoneExperiment } from "react-icons/ai";
 import { LanguajeContext } from "../../providers/LanguajeProvider";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { ExperimentBox } from "../../styles/Experiment.styles";
-
+import BookComp from "../../components/BookComp";
+import CassetteComp from "../../components/CassetteComp";
+import LetterComp from "../../components/LetterComp";
 
 export const Experiment = () => {
     const { languaje } = useContext(LanguajeContext);
@@ -35,7 +37,20 @@ export const Experiment = () => {
                         }
                     >
                         <>
+                            <div className="list">
+                                <div className="item">
+                                    <BookComp />
+                                </div>
 
+                                <div className="item">
+                                    <CassetteComp />
+                                </div>
+
+                                <div className="item">
+                                    <LetterComp />
+                                </div>
+
+                            </div>
                             <div className="list">
                                 {languaje.experiments.experiment.map((exp, i) => (
                                     <div className="item" key={i}>
