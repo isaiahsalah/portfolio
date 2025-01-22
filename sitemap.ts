@@ -1,27 +1,33 @@
-import { SitemapStream, streamToPromise } from "sitemap";
-import { createWriteStream } from "fs";
-import { resolve } from "path";
+import fs from "fs";
 
-const links = [
-  { url: "/", changefreq: "daily", priority: 1.0 },
-  { url: "/about", changefreq: "monthly", priority: 0.8 },
-  { url: "/services", changefreq: "monthly", priority: 0.8 },
+const baseUrl = "https://isaiah.lat";
+
+const routes = [
+  "", // Página principal
+  "about", // Ejemplo de otra ruta
+  "contact", // Otra ruta
 ];
 
-async function generateSitemap() {
-  const stream = new SitemapStream({ hostname: "https://isaiah.lat" });
-  const writeStream = createWriteStream(
-    resolve(__dirname, "public/sitemap.xml")
-  );
+const generateSitemap = () => {
+  const sitemapContent = `
+    <?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      ${routes
+        .map(
+          (route) => `
+        <url>
+          <loc>${baseUrl}/${route}</loc>
+          <lastmod>${new Date().toISOString()}</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>${route === "" ? 1.0 : 0.8}</priority>
+        </url>
+      `
+        )
+        .join("")}
+    </urlset>
+  `;
 
-  links.forEach((link) => stream.write(link));
-  stream.end();
+  fs.writeFileSync("./public/sitemap.xml", sitemapContent.trim());
+};
 
-  const sitemap = await streamToPromise(stream).then((data) => data.toString());
-  writeStream.write(sitemap);
-  console.log("Sitemap generado exitosamente.");
-}
-
-generateSitemap().catch((error) => {
-  console.error("Error al generar el sitemap:", error);
-});
+generateSitemap();
