@@ -37,20 +37,7 @@ export const Experiment = () => {
                         }
                     >
                         <>
-                            <div className="list">
-                                <div className="item">
-                                    <BookComp />
-                                </div>
 
-                                <div className="item">
-                                    <CassetteComp />
-                                </div>
-
-                                <div className="item">
-                                    <LetterComp />
-                                </div>
-
-                            </div>
                             <div className="list">
                                 {languaje.experiments.experiment.map((exp, i) => (
                                     <div className="item" key={i}>
