@@ -29,6 +29,7 @@ legend{
     padding: 20px;
     transition: all 0.15s ease-in-out;
     gap:12px ;
+    justify-content: center;
 }
 
 .item:hover{

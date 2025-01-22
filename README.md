@@ -4,7 +4,7 @@
   💫📋My Portfolio 2024📋💫
 </h1>
 <p align="center">
-    Este es 👉🏻<a href="https://www.isaias.lat"> 
+    Este es 👉🏻<a href="https://www.isaiah.lat"> 
     mi portafolio
   </a> personal donde comparto algunos de mis proyectos y habilidades como desarrollador web y movil. He construido este sitio con React para demostrar mis habilidades en esta tecnología.</p>
 

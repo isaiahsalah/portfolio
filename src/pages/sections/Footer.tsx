@@ -17,7 +17,7 @@ export const Footer = () => {
                     }
                 >
                     <div className='flex-area'>
-                        <p className='by'>{languaje.footer} - 2024</p>
+                        <p className='by'>{languaje.footer} - 2025</p>
 
                     </div>
                 </CSSTransition>

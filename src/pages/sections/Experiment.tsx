@@ -3,6 +3,9 @@ import { AiTwotoneExperiment } from "react-icons/ai";
 import { LanguajeContext } from "../../providers/LanguajeProvider";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { ExperimentBox } from "../../styles/Experiment.styles";
+import BookComp from "../../components/BookComp";
+import CassetteComp from "../../components/CassetteComp";
+import LetterComp from "../../components/LetterComp";
 
 export const Experiment = () => {
     const { languaje } = useContext(LanguajeContext);
@@ -33,32 +36,48 @@ export const Experiment = () => {
                             node.addEventListener("transitionend", done, false)
                         }
                     >
-                        <div className="list">
-                            {languaje.experiments.experiment.map((exp, i) => (
-                                <div className="item" key={i}>
-                                    <div className="sup">
-                                        <AiTwotoneExperiment className="icon-left" />
-                                        <ul className="links">
-                                            {exp.links.map((link, i) => (
+                        <>
+                            <div className="list">
+                                <div className="item">
+                                    <BookComp />
+                                </div>
+
+                                <div className="item">
+                                    <CassetteComp />
+                                </div>
+
+                                <div className="item">
+                                    <LetterComp />
+                                </div>
+
+                            </div>
+                            <div className="list">
+                                {languaje.experiments.experiment.map((exp, i) => (
+                                    <div className="item" key={i}>
+                                        <div className="sup">
+                                            <AiTwotoneExperiment className="icon-left" />
+                                            <ul className="links">
+                                                {exp.links.map((link, i) => (
+                                                    <li key={i}>
+                                                        <a href={link.link} target="_blanck">
+                                                            <link.icon className="icon-right" />
+                                                        </a>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                        <h6 className="title">{exp.title}</h6>
+                                        <ul className="tecno">
+                                            {exp.tecnology.map((tecno, i) => (
                                                 <li key={i}>
-                                                    <a href={link.link} target="_blanck">
-                                                        <link.icon className="icon-right" />
-                                                    </a>
+                                                    <p>{tecno}</p>
                                                 </li>
                                             ))}
                                         </ul>
                                     </div>
-                                    <h6 className="title">{exp.title}</h6>
-                                    <ul className="tecno">
-                                        {exp.tecnology.map((tecno, i) => (
-                                            <li key={i}>
-                                                <p>{tecno}</p>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))}
-                        </div>
+                                ))}
+                            </div>
+                        </>
                     </CSSTransition>
                 </SwitchTransition>
             </div>

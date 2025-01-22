@@ -10,7 +10,7 @@ export const Banner = () => {
 
     const downloadCV = () => {
         const enlaceDescarga = document.createElement('a');
-        enlaceDescarga.href = "./assets/documents/CV.pdf";
+        enlaceDescarga.href = "./CV.pdf";
         enlaceDescarga.target = '_blank';
         enlaceDescarga.download = 'Isaias Salas Montesinos.pdf';
 

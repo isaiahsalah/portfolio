@@ -1,7 +1,7 @@
 import { HTMLAttributes, useContext } from 'react'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import { LanguajeContext } from '../providers/LanguajeProvider';
-import Profile from '/images/perfil.jpg';
+import Profile from '../assets/images/perfil.jpg';
 
 interface PerfilProps extends HTMLAttributes<HTMLDivElement> { }
 

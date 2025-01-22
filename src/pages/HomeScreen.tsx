@@ -8,7 +8,7 @@ import { Experiment } from "./sections/Experiment";
 import { Contact } from "./sections/Contact";
 import { Footer } from "./sections/Footer";
 import createScrollRevealInstance from "../components/MyScrollReveal";
-
+import Backimage from "../assets/images/socrates.jpg"
 
 export const HomeScreen = () => {
 
@@ -88,12 +88,11 @@ export const HomeScreen = () => {
             <Banner />
             <About />
             <Experience />
-
-            <Works />
             <Experiment />
+            <Works />
             <Contact />
             <Footer />
-            <img className="backgroud-image-app" src="/images/socrates.jpg" alt="UwU" />
+            <img className="backgroud-image-app" src={Backimage} alt="UwU" />
         </div>
     );
 };
