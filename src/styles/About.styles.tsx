@@ -96,7 +96,13 @@ min-height: 100vh;
 
     // Foto
     .back-image{
-        width: 80%;
+        width: 100%;
+    }
+    .image{
+        aspect-ratio: 4/2;
+        object-fit: cover;
+        object-position: 50% 20%;
+
     }
 
     //Skills
@@ -132,7 +138,13 @@ min-height: 100vh;
         width: 100%;
     }
     .back-image{
-        width: 80%;
+        width: 100%;
+    }
+    .image{
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        object-position: 50% 20%;
+
     }
     .hard{
         column-count: 3;

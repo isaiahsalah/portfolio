@@ -62,7 +62,7 @@ export const Works = () => {
                     >
                         <fieldset>
                             <legend>
-                                <span className="color-p">03.</span> {languaje.works.title}
+                                <span className="color-p">04.</span> {languaje.works.title}
                             </legend>
                         </fieldset>
                     </CSSTransition>

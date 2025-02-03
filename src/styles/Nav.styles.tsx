@@ -168,6 +168,7 @@ export const HeaderBox = styled.nav`
       padding: 0 2px;
     }
     .logo-movil {
+      pointer-events: none;
       font-size: ${fontSize.subTitle2};
       font-weight: bold;
       display: flex;

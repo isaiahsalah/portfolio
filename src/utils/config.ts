@@ -1,6 +1,7 @@
 import {
   RiCodepenFill,
   RiGithubFill,
+  RiInstagramFill,
   RiLinkedinFill,
   RiTwitterFill,
   RiWhatsappFill,
@@ -56,6 +57,11 @@ export const MySocialMedia = [
     title: "Whatsapp",
     link: "https://api.whatsapp.com/send?phone=59170881108&text=%20",
     icon: RiWhatsappFill,
+  },
+  {
+    title: "Instagram",
+    link: "https://www.instagram.com/isaiah.salah.mon/",
+    icon: RiInstagramFill,
   },
   {
     title: "Linkedin",

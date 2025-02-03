@@ -11,33 +11,106 @@ fieldset{
 legend{
     text-align:center;
 }
-
+ 
 .list{
-    width:100%;
+    
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
+    //grid-template-rows: auto;
+    box-sizing: border-box;
     align-items: center;
-    grid-gap: 15px;
-}
-.item{ 
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    background-color: ${colors.secondary}B3;
-    border-radius: 5px;
-    padding: 20px;
-    transition: all 0.15s ease-in-out;
-    gap:12px ;
     justify-content: center;
+    //overflow: hidden;
+    //grid-gap: 15px; 
+    //background-color: red;
+    position: relative;
+    width:100%;
+}
+.item{  
+    
+    display: flex; 
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    //background-color: ${colors.secondary}B3;
+    
+    padding: 20px;
+    gap:20px ;
+    height: 100%;
+    width: 100%;
+    //background-color: beige; 
+    box-sizing: border-box;
+    
+    .item-experiment{
+        //filter: grayscale(1) opacity(0.1); 
+        //filter:   opacity(0.5);
+        
+        transition: all 0.25s ease-in-out;
+        background-image: radial-gradient(
+            circle at 20% 30%,
+            ${colors.primary},
+            ${colors.dark}
+        );
+        .experiment{
+            transition: all  0.25s ease-in-out;
+            filter: saturate(0%);;
+            opacity: 0.4;
+        }
+    }
 }
 
 .item:hover{
-    background-color: ${colors.secondary};
-    padding: 20px;
-    transform: scale(1.05);
+    //background-color: ${colors.secondary}B3; 
+    //transform: scale(1.05);
+    .item-experiment{
+        //filter: grayscale(1) opacity(0.1); 
+        filter:   opacity(1);
+        .experiment{
+            filter: none;
+            opacity: 1;
+        }
+    } 
     .title{
         color: ${colors.primary};
+    }
+}
+.item-experiment{ 
+    width: 100%;
+    height: 250px;
+     //border-radius: 5px;
+    border-radius: 5px; 
+    box-sizing: border-box; 
+    overflow: hidden;
+ }
+
+.first-experiment{
+    order: 1;
+    
+}
+
+.last-experiment{
+    order: 1;
+}
+
+.experiment{ 
+    width: 100%;
+    height: 100%;
+    
+}
+.item-description{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    width: 100%; 
+    box-sizing: border-box;
+    gap: 10px;
+    border: 4px double ${colors.light}33;
+	border-width: 0 0 4px  0;
+    
+    p{
+        text-align:justify
     }
 }
 
@@ -91,23 +164,78 @@ legend{
     width: 100%;
 }
 @media screen and (max-width: 600px) {
-  /* Estilos para pantallas con ancho máximo de 600px */
     .list{
-    grid-template-columns: 1fr; 
-}
+        grid-template-columns: none; 
+    }
+    .item{
+        flex-direction: row;
+        gap: 10px;
+        flex-direction: column;
+    }
+    .item-experiment{
+        width: 100%;
+    }
+    .item-description{
+        border-width:  0 0 4px  0;
+        height: auto;
+        width: 100%;
+    }
+    .last-experiment{
+    order: 1;
+    }
+    .item{
+        .item-experiment{
+        filter:   opacity(0.8);
+    }
+    }
+
+    .item:hover{
+        .item-experiment{
+            filter:   opacity(1);
+        }
+    }
+ 
 }
 
 @media screen and (min-width: 601px) and (max-width: 1200px) {
-  /* Estilos para pantallas con ancho mínimo de 601px y máximo de 1200px */
-  .list{
-    grid-template-columns: 1fr 1fr; 
+    .item-experiment{
+
+        width: 70%;
+    }
+    .item-description{
+        border-width: 4px  0;
+
+        height: 100%;
+        width: 30%;
+    }
+    .list{
+        grid-template-columns: none; 
+    }
+    .item{
+        flex-direction: row;
+
+        .item-experiment{
+        filter:   opacity(0.8);
+    }
+    .first-experiment{
+    order: 1;
+    
 }
+
+.last-experiment{
+    order: 3;
+}
+    }
+
+    .item:hover{
+        .item-experiment{
+            filter:   opacity(1);
+        }
+    }
 }
 
 @media screen and (min-width: 1201px) {
-  /* Estilos para pantallas con ancho mínimo de 1201px */
-  body{
-  }
+  
 }
 
 `

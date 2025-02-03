@@ -1,19 +1,27 @@
 
 import { useContext, useEffect, useState } from "react";
-import { CassetteData } from "../data/CassetteData"
 import useSound from "use-sound";
-import { AudioContext } from "../providers/AudioProvider";
-import { CassetteBox } from "../styles/CassetteStyles";
 
-import cassettekey1 from "../assets/sounds/paper2.mp3";
-import cassettekey2 from "../assets/sounds/paper2.mp3";
-import cassettekey3 from "../assets/sounds/paper2.mp3";
+import cassettekey1 from "../../assets/sounds/cassette-key1.mp3";
+import cassettekey2 from "../../assets/sounds/cassette-key2.mp3";
+import cassettekey3 from "../../assets/sounds/cassette-key3.mp3";
+
+import key1 from "../../assets/sounds/tecla1.mp3";
+import key2 from "../../assets/sounds/tecla2.mp3";
+import key3 from "../../assets/sounds/tecla3.mp3";
+
+import { AudioContext } from "../../providers/AudioProvider";
+import { CassetteData } from "../../data/CassetteData";
+import { CassetteBox } from "../../styles/Experiment/Cassette.styles";
+import { FaPause, FaPlay, FaVolumeDown, FaVolumeUp } from "react-icons/fa";
+import { FaMaximize } from "react-icons/fa6";
 
 const audiosCassetteTecla = [cassettekey1, cassettekey2, cassettekey3];
+const audiosTecla = [key1, key2, key3];
 
 const CassetteComp = () => {
 
-    const { setAudioFile, playAudio, stopAudio, isAudioPlaying } = useContext(AudioContext);
+    const { setAudioFile, playAudio, stopAudio, isAudioPlaying, setVolume, volume, pauseAudio } = useContext(AudioContext);
 
     const [when, setWhen] = useState(CassetteData[0]);
     const [transitionState, setTransitionState] = useState<string>("visible");
@@ -22,7 +30,15 @@ const CassetteComp = () => {
         audiosCassetteTecla[Math.floor(Math.random() * audiosCassetteTecla.length)]
     );
 
+
     const [play] = useSound(audio);
+
+
+    const PlayKey = () => {
+        setAudio(audiosTecla[Math.floor(Math.random() * audiosTecla.length)]);
+
+        play();
+    }
 
     const PlayCassette = (audio: string) => {
         if (!isAudioPlaying) {
@@ -32,8 +48,6 @@ const CassetteComp = () => {
             stopAudio();
             setAudioFile(audio);
             playAudio();
-
-
         }
     }
 
@@ -95,16 +109,34 @@ const CassetteComp = () => {
 
 
     const handleClickMax = () => {
-
+        PlayKey()
         const carta = document.querySelector('.cassette-container') as HTMLElement;
+        const back = document.querySelector('.background-container-cassette') as HTMLElement;
 
         //const perspectiva = carta.querySelector('#perspectiva') as HTMLElement;
 
         if (carta.classList.contains('open')) {
             carta.classList.remove('open');
+            back.classList.remove('open');
+
         }
         else {
             carta.classList.add('open');
+            back.classList.add('open');
+
+        }
+    };
+
+    const handleClickPlay = () => {
+
+        const carta = document.querySelector('.cassette') as HTMLElement;
+        //const perspectiva = carta.querySelector('#perspectiva') as HTMLElement;
+
+        if (carta.classList.contains('animated')) {
+            carta.classList.remove('animated');
+        }
+        else {
+            carta.classList.add('animated');
         }
     };
 
@@ -120,26 +152,16 @@ const CassetteComp = () => {
             }
         };
 
-        const handleClickPlayer = () => {
-
-            const carta = document.querySelector('.cassette') as HTMLElement;
-            //const perspectiva = carta.querySelector('#perspectiva') as HTMLElement;
-
-            if (carta.classList.contains('animated')) {
-                carta.classList.remove('animated');
-            }
-        };
-
-
-
         const handleClick = () => {
 
             const carta = document.querySelector('.cassette-container') as HTMLElement;
+            const back = document.querySelector('.background-container-cassette') as HTMLElement;
 
             //const perspectiva = carta.querySelector('#perspectiva') as HTMLElement;
 
             if (!carta.classList.contains('open')) {
                 carta.classList.add('open');
+                back.classList.add('open');
             }
         };
 
@@ -153,14 +175,41 @@ const CassetteComp = () => {
             element.addEventListener('click', () => handleClickKey());
         });
 
-        document.querySelectorAll('.player-button').forEach((element) => {
-            element.addEventListener('click', () => handleClickPlayer());
-        });
+
 
 
 
 
     }, []);
+
+    const PlayMusic = () => {
+        PlayKey()
+        handleClickPlay()
+        if (!isAudioPlaying) {
+
+            playAudio();
+        } else {
+            pauseAudio();
+        }
+    }
+
+
+    const addVolume = () => {
+        PlayKey()
+        if (isAudioPlaying && volume < 1) {
+            console.log(volume)
+            setVolume(volume + 0.05)
+        }
+
+    }
+
+    const removeVolume = () => {
+        PlayKey()
+        if (isAudioPlaying && volume > 0) {
+            console.log(volume)
+            setVolume(volume - 0.05)
+        }
+    }
 
 
     return (
@@ -223,9 +272,21 @@ const CassetteComp = () => {
 
                     </div>
                     <div className="controls">
-                        <div className="controls-button play"></div>
-                        <div className="controls-button exit" onClick={handleClickMax}>
+                        <div className="controls-button play" onClick={PlayMusic} >
+                            {isAudioPlaying ? <FaPause /> : <FaPlay />}
+                        </div>
 
+                        <div className="controls-button " onClick={removeVolume}>
+                            <FaVolumeDown />
+                        </div>
+
+                        <div className="controls-button " onClick={addVolume} >
+                            <FaVolumeUp />
+                        </div>
+
+
+                        <div className="controls-button exit" onClick={handleClickMax}>
+                            <FaMaximize />
                         </div>
 
                     </div>
@@ -270,6 +331,12 @@ const CassetteComp = () => {
                 <div className="left-cassette">
 
                 </div>
+                <div className="side"></div>
+                <div className="bottom-shadow"></div>
+            </div>
+
+            <div className='background-container-cassette'>
+                <div className="shadow-cassette"></div>
             </div>
 
 

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import { RecuerdoData } from '../data/BookData';
+import { RecuerdoData } from '../../data/BookData';
 import useSound from 'use-sound';
-import paper1 from '../assets/sounds/paper1.mp3';
-import paper2 from "../assets/sounds/paper2.mp3";
-import paper3 from "../assets/sounds/paper3.mp3";
-import { BookStyle } from '../styles/BookStyles';
+import paper1 from '../../assets/sounds/paper1.mp3';
+import paper2 from "../../assets/sounds/paper2.mp3";
+import paper3 from "../../assets/sounds/paper3.mp3";
+import { BookStyle } from '../../styles/Experiment/Book.styles';
 
 
 const audiosPaper = [paper1, paper2, paper3];
@@ -25,10 +25,13 @@ const BookComp = () => {
         const handleClick = (index: number) => {
 
             const book = document.querySelector('.book') as HTMLElement;
+            const back = document.querySelector('.background-container') as HTMLElement;
+
             const containerBook = document.querySelector('.container-book') as HTMLElement;
             const paper = document.querySelectorAll('.paper')[index] as HTMLElement;
 
             book.classList.add('open');
+            back.classList.add('open');
             containerBook.classList.add('open');
             paper.classList.add('open');
 
@@ -46,10 +49,14 @@ const BookComp = () => {
                 // Verificar si el papel es el primero
                 if (Array.from(paper.parentElement?.children || []).indexOf(paper) === 0) {
                     const book = document.querySelector('.book') as HTMLElement;
+                    const back = document.querySelector('.background-container') as HTMLElement;
+
                     const containerBook = document.querySelector('.container-book') as HTMLElement;
 
                     containerBook.classList.remove('open');
                     book.classList.remove('open');
+                    back.classList.remove('open');
+
                 }
 
                 paper.classList.remove('open');
@@ -60,26 +67,10 @@ const BookComp = () => {
     return (
         <BookStyle>
 
-
             <div className="container-book">
+
+
                 <div className="book">
-                    {/*
-                    <div className="first paper">
-                        <div className="page front contents">
-                            <div className="intro">
-                                <h3>Sketch BOOK</h3>
-                                <p className='p2'>If at first you don't succeed, try, try again</p>
-                            </div>
-                        </div>
-                        <div className="page back"></div>
-                    </div>
-                    <div className="second paper">
-                        <div className="page front contents">
-                            <div id="vara-container"></div>
-                        </div>
-                        <div className="page back"></div>
-                    </div>
-                    */}
                     <div className="front-paper paper"
                         style={{
                             zIndex: (RecuerdoData.length + 5)
@@ -91,8 +82,8 @@ const BookComp = () => {
                             }}
                         >
                             <div className="intro">
-                                <h3>Sketch BOOK</h3>
-                                <p className='p2'>If at first you don't succeed, try, try again</p>
+                                <h3 className='title-book'> Librito</h3>
+                                <h4 className='subtitle-book'>Bla bla bla bla blaaa</h4>
                             </div>
                         </div>
                         <div className="page back"
@@ -102,10 +93,7 @@ const BookComp = () => {
                         >
                             <div className='back-text'>
                                 <p className="p1">
-                                    “Para Natalia,
-                                    Con cariño en tu cumpleaños.
-                                    Que cada página te brinde una sonrisa y un recuerdo especial.”
-                                </p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a hendrerit magna. Integer sed tempor ante. Etiam diam sem, varius eu aliquam at, condimentum at lectus. Morbi nisl velit, semper a maximus at, auctor vel massa. Curabitur convallis suscipit neque, vitae eleifend enim viverra non. Donec et massa non ligula ultrices luctus sed at ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut elementum eros vitae tellus dignissim, quis viverra ante tincidunt. Aenean lacinia libero lectus, et efficitur dolor malesuada sed. Fusce consequat quam sed rutrum maximus. Etiam aliquam interdum mauris, nec mattis justo egestas lacinia. Quisque at odio convallis, gravida justo sit amet, faucibus felis.                                </p>
                             </div>
 
                         </div>
@@ -126,7 +114,7 @@ const BookComp = () => {
                                 <div className="divider" />
                                 <h3 className="title-container ">
                                     {
-                                        Array.from("RECUERDO").map((char, i) => {
+                                        Array.from("Lorem Ipsum").map((char, i) => {
                                             return <div className="title" key={i}>
                                                 {char === ' ' ? '\u00A0' : char}
                                             </div>
@@ -137,34 +125,29 @@ const BookComp = () => {
                                 <div className="flex">
                                     <div className="divider" />
                                     <p className="satisfy p2" style={{ paddingBlock: 0 }}>
-                                        {"olissss"}
+                                        {"Hi"}
                                     </p>
                                     <div className="divider" />
 
                                 </div>
                                 <p className="subtitle-poema text-center p1">
                                     <em>
-                                        «¡Que dichosa es la suerte de la vestal inocente!
-                                        Al mundo olvida, por el mundo es olvidada
-                                        ¡Eterno resplandor de una mente sin recuerdos!
-                                        Cada plegaria aceptada, y cada deseo abandonado»
+                                        «Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...»
                                     </em>
                                     —Alexander Pope, Eloisa to Abelard.
                                 </p>
                                 <div className="divider" />
                                 <div >
                                     <p className="p1" style={{ paddingBottom: 0 }}>
-                                        Querida Natalia,
+                                        ¿Lorem Ipsum?
+
 
                                     </p>
                                     <p className="p1" style={{ paddingBottom: 0 }}>
-                                        En tu cumpleaños, te entrego este librito hecho con mucho cariño, lleno de pensamientos y recuerdos, con la esperanza de que te brinde compañía y algo de consuelo en tus días. Cada página está hecha para celebrar lo especial que eres y para ofrecerte un respiro de luz y optimismo.
-                                        Tu presencia y los momentos compartidos han dejado una huella significativa, y este libro es un pequeño reflejo de ese impacto.
-
-
+                                        Nam vulputate sollicitudin erat, ac blandit ex. Nullam dapibus lectus ut sapien scelerisque, a imperdiet quam lobortis. Integer vehicula sapien vitae est mattis, congue pellentesque eros mattis. Sed auctor sapien non dui hendrerit lobortis. Mauris ac feugiat dolor. Proin quis erat elementum, tristique justo vel, fringilla eros. Morbi turpis purus, volutpat non lobortis nec, viverra eu velit. Fusce pellentesque molestie ante vitae aliquam. Nulla ultrices nisi quis urna porttitor, vitae porta turpis malesuada.
                                     </p>
                                     <p className="p1">
-                                        Feliz cumpleaños Nat. Que este regalo te recuerde lo valiosa que eres y te ofrezca un toque de cariño en cada página.
+                                        Sed efficitur dui eros, ut mollis dui vestibulum at. Nulla quis sodales nulla. Mauris imperdiet pretium quam et aliquet. Sed felis lectus, hendrerit vel nisl et, iaculis viverra velit.
                                     </p>
                                 </div>
 
@@ -320,22 +303,6 @@ const BookComp = () => {
                                 </div>
                             </div>)
                     })}
-                    {
-                        /*
-                        <div className="third paper">
-                        <div className="page front contents">
-                            <div id="vara-container2"></div>
-                        </div>
-                        <div className="page back"></div>
-                    </div>
-                    <div className="fourth paper">
-                        <div className="page last front contents">
-                            <div id="vara-container3"></div>
-                        </div>
-                        <div className="page back"></div>
-                    </div>
-                         */
-                    }
                     <div className="final-paper paper" style={{
                         zIndex: 3
                     }}>
@@ -343,17 +310,12 @@ const BookComp = () => {
                             <div className='vara-container'>
 
                                 <p className="p1">
-                                    Bueno, me hubiera gustado poner más cosas en el libro, tengo muchas paginas pendientes de hecho.
-                                    Pero ya se me acabó el tiempo, como siempre. De igual manera, aunque pocos, todos los recuerdo aquí
-                                    son un testimonio de la alegría que trajiste a mi vida.
-                                    Espero que estas páginas te acompañen, con el mismo cariño que me ofreciste.
-
-                                </p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a hendrerit magna. Integer sed tempor ante. Etiam diam sem, varius eu aliquam at, condimentum at lectus. Morbi nisl velit, semper a maximus at, auctor vel massa. Curabitur convallis suscipit neque, vitae eleifend enim viverra non. Donec et massa non ligula ultrices luctus sed at ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut elementum eros vitae tellus dignissim, quis viverra ante tincidunt. Aenean lacinia libero lectus, et efficitur dolor malesuada sed. Fusce consequat quam sed rutrum maximus. Etiam aliquam interdum mauris, nec mattis justo egestas lacinia. Quisque at odio convallis, gravida justo sit amet, faucibus felis.                                </p>
                                 <p className="p1">
-                                    Con gratitud,
+                                    Desarrolado por:
                                 </p>
                                 <p className="p2">
-                                    Isaias
+                                    Isaiah Salah
                                 </p>
 
                             </div>
@@ -365,7 +327,12 @@ const BookComp = () => {
                     </div>
                     <div className="side"></div>
                     <div className="bottom"></div>
+
+                </div>
+                <div className='background-container'>
                     <div className="shadow"></div>
+                    <div className="shadow-paper"></div>
+                    <div className='background-book' />
                 </div>
             </div>
 

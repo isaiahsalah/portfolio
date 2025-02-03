@@ -1,7 +1,69 @@
 import { BiCheck, BiCheckDouble } from "react-icons/bi";
 import { LanguageInterface } from "../interfaces/interfaces";
 import { AiFillGithub, AiOutlineLink } from "react-icons/ai";
-import { RiCodepenFill } from "react-icons/ri";
+import ImageGpt from "../assets/images/gpt.jpg";
+import ImageChatroom from "../assets/images/chatroom.png";
+import ImageTutut from "../assets/images/tutut.png";
+import ImagePortfolio from "../assets/images/portfolio.png";
+import ImageLefitel from "../assets/images/lefitel.png";
+import ImageMunay from "../assets/images/munay.png";
+
+import BirthdayCakeComp from "../components/experiments/BirthdayCakeComp";
+import BookComp from "../components/experiments/BookComp";
+import CassetteComp from "../components/experiments/CassetteComp";
+import LetterComp from "../components/experiments/LetterComp";
+import MouseBlurComp from "../components/experiments/MouseBlurComp";
+import PaintComp from "../components/experiments/PaintComp";
+import TextsComp from "../components/experiments/TextsComp";
+
+const hardSkills = [{
+    title: "React",
+    icon: BiCheckDouble,
+},
+{
+    title: "React Native",
+    icon: BiCheckDouble,
+},
+{
+    title: "Flutter",
+    icon: BiCheck,
+},
+{
+    title: "Python",
+    icon: BiCheck,
+},
+{
+    title: "Node Js",
+    icon: BiCheckDouble,
+},
+{
+    title: "Angular",
+    icon: BiCheck,
+},
+{
+    title: "GAS",
+    icon: BiCheckDouble,
+},
+{
+    title: "PostgreSQL",
+    icon: BiCheckDouble,
+},
+{
+    title: "Mongo DB",
+    icon: BiCheck,
+},
+{
+    title: "Whatsapp API",
+    icon: BiCheck,
+},
+{
+    title: "Google Maps API",
+    icon: BiCheckDouble,
+},
+{
+    title: "OpenAI API",
+    icon: BiCheckDouble,
+},]
 
 export const SpanishLanguage: LanguageInterface = {
     title: "Español",
@@ -16,12 +78,12 @@ export const SpanishLanguage: LanguageInterface = {
             link: "experience",
         },
         {
-            title: "Trabajos",
-            link: "works",
-        },
-        {
             title: "Experimentos",
             link: "experiments",
+        },
+        {
+            title: "Trabajos",
+            link: "works",
         },
         {
             title: "Contacto",
@@ -31,79 +93,20 @@ export const SpanishLanguage: LanguageInterface = {
     banner: {
         title: "Hola mi nombre es",
         subtitle: "Desarrollo cosas pa' la web.",
-        description: `Soy un ingeniero en sistemas que crea experiencias digitales 
-                excepcionales. Actualmente me enfoco en desarrollar productos 
-                accesibles y centrados en el usuario. Busco soluciones creativas 
-                y efectivas para problemas de clientes y me mantengo actualizado 
-                en tecnología para mejorar mi trabajo.`,
+        description: `Soy ingeniero en sistemas con más de 4 años de experiencia creando soluciones digitales excepcionales. Me especializo en desarrollar productos accesibles y centrados en el usuario, ofreciendo soluciones innovadoras y de impacto. Me mantengo actualizado en las últimas tecnologías para garantizar un trabajo de calidad que se adapta a las necesidades del mercado.`,
         button: "Descargar CV",
     },
     about: {
         title: "Lo que debes saber de mí",
-        paragraph1: `¡Qué tal🫡, futuro empleador! Soy un desarrollador web (y a veces movil) 
-                y no, no soy ningún mago o artista, aunque a veces me siento como uno. 
-                Soy como un arquitecto digital que construye software o como un pintor 
-                que dibuja con código. Como sea🫠, me encargo de desarrollar sitios web 
-                increíbles y fáciles de usar`,
-        paragraph2: `☝️🤓Disfruto trabajar en equipo (También solo UwU) y colaborar con diseñadores 
-                y otros desarrolladores para crear proyectos llamativos y funcionales.`,
-        paragraph3: `Mi tolerancia a la frustración arraigada de mis constantes fracasos (amorosos🤡) me 
-                hicieron un terco y perspicaz detective a la hora de solucionar problemas de código👾,
-                no me rindo fácilmente hasta encontrar la solución adecuada. También me las apaño 
-                con tecnologias nuevas, me gusta estar al tanto de las últimas tendencias.🧑🏻‍💻`,
+        paragraph1: `¡Hola! 🌟 Me dedico al diseño y desarrollo de soluciones digitales que combinan diseño 🎨, funcionalidad ⚙️ y propósito 🌍. Más allá de escribir código 💻, mi enfoque está en crear proyectos que realmente conecten con las personas 🤝 y que sean útiles en su día a día.`,
+        paragraph2: `Cada interfaz ✨, cada línea de código 📋, es una oportunidad para construir algo que no solo sea visualmente atractivo, sino que funcione de manera impecable ✅. Trabajo en optimizar cada detalle para garantizar experiencias digitales accesibles ♿, fluidas 🌊 y fáciles de usar, sin importar el dispositivo 📱 o la plataforma 🖥️.`,
+        paragraph3: `Como desarrollador, valoro la colaboración constante 🤓 con quienes están detrás de cada idea 💡, asegurándome de transformar conceptos en realidades tangibles 🎯. Creo en el poder de la tecnología para simplificar procesos 🔧 y abrir puertas 🚪, y me esfuerzo por ofrecer resultados que destaquen tanto por su calidad técnica como por su impacto positivo 🌟.`,
         skills: {
             description:
                 "Aquí hay algunas tecnologías con las que he estado trabajando y habilidades que he desarrollado recientemente:",
             hardskills: {
                 title: "Mis habilidades duras",
-                skills: [{
-                    title: "React",
-                    icon: BiCheckDouble,
-                },
-                {
-                    title: "React Native",
-                    icon: BiCheckDouble,
-                },
-                {
-                    title: "Flutter",
-                    icon: BiCheck,
-                },
-                {
-                    title: "Python",
-                    icon: BiCheck,
-                },
-                {
-                    title: "Node Js",
-                    icon: BiCheckDouble,
-                },
-                {
-                    title: "Angular",
-                    icon: BiCheck,
-                },
-                {
-                    title: "GAS",
-                    icon: BiCheckDouble,
-                },
-                {
-                    title: "PostgreSQL",
-                    icon: BiCheckDouble,
-                },
-                {
-                    title: "Mongo DB",
-                    icon: BiCheck,
-                },
-                {
-                    title: "Whatsapp API",
-                    icon: BiCheck,
-                },
-                {
-                    title: "Google Maps API",
-                    icon: BiCheckDouble,
-                },
-                {
-                    title: "OpenAI API",
-                    icon: BiCheckDouble,
-                },],
+                skills: hardSkills,
             },
             softskills: {
                 title: "Mis habilidades blandas",
@@ -271,7 +274,7 @@ export const SpanishLanguage: LanguageInterface = {
                         personalizadas, y ofrecer respuestas precisas y contextuales para las 
                         necesidades específicas de cada usuario.`,
                 tecnology: ["OpenAI-API", "Whatsapp-API", "Python", "Flask", "MongoDB"],
-                image: "/images/gpt.jpg",
+                image: ImageGpt,
                 state: 6,
                 links: [
                     {
@@ -292,7 +295,7 @@ export const SpanishLanguage: LanguageInterface = {
                         y eficiente, que permite a los usuarios comunicarse de manera rápida 
                         y fácil en grupos en línea. Todo hecho con Angular y Firebase.`,
                 tecnology: ["Angular", "Firebase"],
-                image: "/images/chatroom.png",
+                image: ImageChatroom,
                 state: 6,
                 links: [
                     {
@@ -321,7 +324,7 @@ export const SpanishLanguage: LanguageInterface = {
                         seguridad del transporte público, así como brindar 
                         una mejor experiencia a los usuarios.`,
                 tecnology: ["React", "React-Native", "NodeJS", "PostgreSQL"],
-                image: "/images/tutut.png",
+                image: ImageTutut,
                 state: 5,
                 links: [
                     {
@@ -358,7 +361,7 @@ export const SpanishLanguage: LanguageInterface = {
                         utilizando React, que proporciona una forma eficiente de 
                         crear interfaces de usuario interactivas y responsivas.`,
                 tecnology: ["React", "styled-components"],
-                image: "/images/portfolio.png",
+                image: ImagePortfolio,
                 state: 6,
                 links: [
                     {
@@ -383,7 +386,7 @@ export const SpanishLanguage: LanguageInterface = {
                         estos postes, mejorando la eficiencia y precisión en la gestión 
                         de sus actividades diarias.`,
                 tecnology: ["React", "NodeJS", "Postgresql", "Leaflet"],
-                image: "/images/lefitel.png",
+                image: ImageLefitel,
                 state: 4,
                 links: [
                     {
@@ -402,7 +405,7 @@ export const SpanishLanguage: LanguageInterface = {
                         herramienta valiosa para cualquier pareja que quiera 
                         mejorar su relación.`,
                 tecnology: ["Flutter", "OpenAI-API", ".Net", "MongoDB"],
-                image: "/images/munay.png",
+                image: ImageMunay,
                 state: 4,
                 links: [
                     {
@@ -418,130 +421,39 @@ export const SpanishLanguage: LanguageInterface = {
         title: "Algunos pequeños experimentos",
         experiment: [
             {
-                title: "Efecto de Ruido al desplazarse",
-                tecnology: ["CSS", "HTML"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/RweGqBa",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/RweGqBa",
-                        icon: AiOutlineLink,
-                    },
-                ],
+                title: "Bitácora Dinámica: Codificada con Estilo 📓✨",
+                description: " ",
+                comp: BookComp,
             },
             {
-                title: "Efecto de hacker en texto",
-                tecnology: ["CSS", "HTML", "JS"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/qBJqmGy",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/qBJqmGy",
-                        icon: AiOutlineLink,
-                    },
-                ],
+                title: "Delicia Renderizada a Mano en CSS 🌸✨",
+                description: "",
+                comp: BirthdayCakeComp,
             },
             {
-                title: "Efecto de Blur en el mouse",
-                tecnology: ["CSS", "HTML", "JS"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/XWxNzGo",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/XWxNzGo",
-                        icon: AiOutlineLink,
-                    },
-                ],
+                title: "Galería Tipográfica: Arte en CSS 🎨✨",
+                description: "",
+                comp: TextsComp,
             },
             {
-                title: "Efecto de escritura",
-                tecnology: ["CSS", "HTML"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/KKGNooX",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/KKGNooX",
-                        icon: AiOutlineLink,
-                    },
-                ],
+                title: "Aurora en Movimiento: El Rastro del Mouse 🌌✨",
+                description: "",
+                comp: MouseBlurComp,
             },
             {
-                title: "Efecto de Sombra Dinamica",
-                tecnology: ["CSS", "HTML", "JS"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/poxNMXm",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/poxNMXm",
-                        icon: AiOutlineLink,
-                    },
-                ],
+                title: "Cassette Player: Retro Audio en un Click 🎶📼",
+                description: "",
+                comp: CassetteComp,
             },
             {
-                title: "Paint con JS",
-                tecnology: ["CSS", "HTML", "JS"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/mdzRqYJ",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/mdzRqYJ",
-                        icon: AiOutlineLink,
-                    },
-                ],
+                title: "Cartitas Interactivas: Descubre su Contenido con un Click 🎴💫",
+                description: "",
+                comp: LetterComp,
             },
             {
-                title: "Efecto Parallax al hacer scroll",
-                tecnology: ["CSS", "HTML", "JS"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/bGmgKoz",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/bGmgKoz",
-                        icon: AiOutlineLink,
-                    },
-                ],
-            },
-            {
-                title: "Efecto al desplazarse por un botón",
-                tecnology: ["CSS", "HTML"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/OJBWwEy",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/OJBWwEy",
-                        icon: AiOutlineLink,
-                    },
-                ],
-            },
-            {
-                title: "Efecto de Cursor dentro de un texto",
-                tecnology: ["CSS", "HTML", "JS"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/gOBgjqa",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/gOBgjqa",
-                        icon: AiOutlineLink,
-                    },
-                ],
+                title: "Canvas Creativo: Dibuja y Colorea con CSS y TS 🖼️✨",
+                description: "",
+                comp: PaintComp,
             },
         ],
     },
@@ -570,12 +482,12 @@ export const EnglishLanguage: LanguageInterface = {
             link: "experience",
         },
         {
-            title: "Works",
-            link: "works",
-        },
-        {
             title: "Experiments",
             link: "experiments",
+        },
+        {
+            title: "Works",
+            link: "works",
         },
         {
             title: "Contact",
@@ -585,82 +497,20 @@ export const EnglishLanguage: LanguageInterface = {
     banner: {
         title: "Hi my name is",
         subtitle: "I develop things for the web.",
-        description: `I am a systems engineer who creates 
-            exceptional digital experiences. Currently, my focus 
-            is on developing accessible and user-centered products. 
-            I seek creative and effective solutions for client 
-            problems and stay up-to-date with technology to improve 
-            my work.`,
+        description: `I’m a systems engineer with 4+ years of experience crafting exceptional digital solutions. I specialize in creating accessible, user-centered products and excel at delivering innovative, impactful solutions. Staying updated on the latest technologies, I ensure high-quality work that adapts to evolving market needs.`,
         button: "Download CV",
     },
     about: {
         title: "What you should know about me",
-        paragraph1: `Hello🫡 future employer! I'm a web (and sometimes mobile) developer, 
-            and no, I'm not a wizard or an artist, although sometimes I feel like one. 
-            I'm like a digital architect who builds software or like a painter who draws 
-            with code. Anyway🫠, I'm responsible for developing amazing and easy-to-use websites.`,
-        paragraph2: `☝️🤓I enjoy working in teams (also alone UwU) and collaborating with 
-            designers and other developers to create eye-catching and functional projects.`,
-        paragraph3: `My rooted tolerance for frustration from my constant (romantic🤡) 
-            failures has made me a stubborn and insightful detective when it comes to solving 
-            code problems👾. I don't give up easily until I find the right solution. 
-            I also manage with new technologies, I like to stay up-to-date with the 
-            latest trends.🧑🏻‍💻`,
+        paragraph1: `Hello! 🌟 I specialize in designing and developing digital solutions that merge aesthetics 🎨, functionality ⚙️, and purpose 🌍. Beyond writing code 💻, my focus is on creating projects that truly resonate with people 🤝 and serve a meaningful purpose in their daily lives.`,
+        paragraph2: `Every interface ✨, every line of code 📋, is an opportunity to build something that is not only visually appealing but also works flawlessly ✅. I pay attention to every detail to ensure digital experiences that are accessible ♿, seamless 🌊, and user-friendly, no matter the device 📱 or platform 🖥️.`,
+        paragraph3: `As a developer, I deeply value collaboration 🤓 with those behind each idea 💡, ensuring concepts are transformed into tangible realities 🎯. I believe in the power of technology to simplify processes 🔧 and open doors 🚪, striving to deliver results that stand out for their technical quality and positive impact 🌟.`,
         skills: {
             description: `Here are some technologies I've been working with and skills 
                     I've recently developed:`,
             hardskills: {
                 title: "My hard skills",
-                skills: [
-                    {
-                        title: "React",
-                        icon: BiCheckDouble,
-                    },
-                    {
-                        title: "React Native",
-                        icon: BiCheckDouble,
-                    },
-                    {
-                        title: "Flutter",
-                        icon: BiCheck,
-                    },
-                    {
-                        title: "Python",
-                        icon: BiCheck,
-                    },
-                    {
-                        title: "Node Js",
-                        icon: BiCheckDouble,
-                    },
-                    {
-                        title: "Angular",
-                        icon: BiCheck,
-                    },
-                    {
-                        title: "GAS",
-                        icon: BiCheckDouble,
-                    },
-                    {
-                        title: "PostgreSQL",
-                        icon: BiCheckDouble,
-                    },
-                    {
-                        title: "Mongo DB",
-                        icon: BiCheck,
-                    },
-                    {
-                        title: "Whatsapp API",
-                        icon: BiCheck,
-                    },
-                    {
-                        title: "Google Maps API",
-                        icon: BiCheckDouble,
-                    },
-                    {
-                        title: "OpenAI API",
-                        icon: BiCheckDouble,
-                    },
-                ],
+                skills: hardSkills,
             },
             softskills: {
                 title: "My soft skills",
@@ -828,7 +678,7 @@ export const EnglishLanguage: LanguageInterface = {
                         allows the assistant to maintain fluid and personalized conversations 
                         and offer accurate and contextual responses to the specific needs of each user.`,
                 tecnology: ["OpenAI-API", "Whatsapp-API", "Python", "Flask", "MongoDB"],
-                image: "/images/gpt.jpg",
+                image: ImageGpt,
                 state: 6,
                 links: [
                     {
@@ -849,7 +699,7 @@ export const EnglishLanguage: LanguageInterface = {
                         that allows users to communicate quickly and easily in online groups. Everything 
                         is built with Angular and Firebase.`,
                 tecnology: ["Angular", "Firebase"],
-                image: "/images/chatroom.png",
+                image: ImageChatroom,
                 state: 6,
                 links: [
                     {
@@ -875,7 +725,7 @@ export const EnglishLanguage: LanguageInterface = {
                         of system can improve the efficiency and safety of public 
                         transportation, as well as provide a better experience for users.`,
                 tecnology: ["React", "React-Native", "NodeJS", "PostgreSQL"],
-                image: "/images/tutut.png",
+                image: ImageTutut,
                 state: 5,
                 links: [
                     {
@@ -911,7 +761,7 @@ export const EnglishLanguage: LanguageInterface = {
                         It was built using React, which provides an efficient way to create 
                         interactive and responsive user interfaces.`,
                 tecnology: ["React", "styled-components"],
-                image: "/images/portfolio.png",
+                image: ImagePortfolio,
                 state: 6,
                 links: [
                     {
@@ -934,7 +784,7 @@ export const EnglishLanguage: LanguageInterface = {
           repair, and maintenance of these poles, enhancing efficiency and accuracy in their daily 
           management activities.`,
                 tecnology: ["React", "NodeJS", "Postgresql", "Leaflet"],
-                image: "/images/lefitel.png",
+                image: ImageLefitel,
                 state: 4,
                 links: [
                     {
@@ -951,7 +801,7 @@ export const EnglishLanguage: LanguageInterface = {
                         such as the question section, personalized advice, and integration with ChatGPT, 
                         this app is a valuable tool for any couple looking to enhance their relationship.`,
                 tecnology: ["Flutter", "OpenAI-API", ".Net", "MongoDB"],
-                image: "/images/munay.png",
+                image: ImageMunay,
                 state: 4,
                 links: [
                     {
@@ -968,130 +818,39 @@ export const EnglishLanguage: LanguageInterface = {
         title: "Here are some small experiments",
         experiment: [
             {
-                title: "Noise Hover Effect",
-                tecnology: ["CSS", "HTML"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/RweGqBa",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/RweGqBa",
-                        icon: AiOutlineLink,
-                    },
-                ],
+                title: "Dynamic Journal: Coded with Style 📓✨",
+                description: " ",
+                comp: BookComp,
             },
             {
-                title: "Hacker Effect On Text",
-                tecnology: ["CSS", "HTML", "JS"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/qBJqmGy",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/qBJqmGy",
-                        icon: AiOutlineLink,
-                    },
-                ],
+                title: "Handcrafted Delight Rendered in CSS 🌸✨",
+                description: "",
+                comp: BirthdayCakeComp,
             },
             {
-                title: "Blur Effect On Mouse",
-                tecnology: ["CSS", "HTML", "JS"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/XWxNzGo",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/XWxNzGo",
-                        icon: AiOutlineLink,
-                    },
-                ],
+                title: "Typographic Gallery: Art in CSS 🎨✨",
+                description: "",
+                comp: TextsComp,
             },
             {
-                title: "Writing Effect",
-                tecnology: ["CSS", "HTML"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/KKGNooX",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/KKGNooX",
-                        icon: AiOutlineLink,
-                    },
-                ],
+                title: "Aurora in Motion: The Mouse Trail 🌌✨",
+                description: "",
+                comp: MouseBlurComp,
             },
             {
-                title: "Dynamic Shadow Effect",
-                tecnology: ["CSS", "HTML", "JS"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/poxNMXm",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/poxNMXm",
-                        icon: AiOutlineLink,
-                    },
-                ],
+                title: "Cassette Player: Retro Audio with One Click 🎶📼",
+                description: "",
+                comp: CassetteComp,
             },
             {
-                title: "Paint With JS",
-                tecnology: ["CSS", "HTML", "JS"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/mdzRqYJ",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/mdzRqYJ",
-                        icon: AiOutlineLink,
-                    },
-                ],
+                title: "Interactive Letters: Discover Their Content with One Click 🎴💫",
+                description: "",
+                comp: LetterComp,
             },
             {
-                title: "Parallax Effect When Scrolling",
-                tecnology: ["CSS", "HTML", "JS"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/bGmgKoz",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/bGmgKoz",
-                        icon: AiOutlineLink,
-                    },
-                ],
-            },
-            {
-                title: "Effect When Hovering A Button",
-                tecnology: ["CSS", "HTML"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/OJBWwEy",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/OJBWwEy",
-                        icon: AiOutlineLink,
-                    },
-                ],
-            },
-            {
-                title: "Cursor Effect Within A Text",
-                tecnology: ["CSS", "HTML", "JS"],
-                links: [
-                    {
-                        link: "https://codepen.io/isaiahsalah/pen/gOBgjqa",
-                        icon: RiCodepenFill,
-                    },
-                    {
-                        link: "https://codepen.io/isaiahsalah/full/gOBgjqa",
-                        icon: AiOutlineLink,
-                    },
-                ],
+                title: "Creative Canvas: Draw and Color with CSS and TS 🖼️✨",
+                description: "",
+                comp: PaintComp,
             },
         ],
     },

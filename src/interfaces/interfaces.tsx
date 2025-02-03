@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { IconType } from "react-icons";
 
 export interface ExperienceInterface {
@@ -24,11 +25,8 @@ export interface WorkInterface {
 
 export interface ExperimentInterface {
     title: string;
-    tecnology: string[];
-    links: {
-        link: string,
-        icon: IconType,
-    }[];
+    description: string;
+    comp: FC;
 }
 
 export interface LanguageInterface {

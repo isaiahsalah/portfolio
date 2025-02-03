@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { AiTwotoneExperiment } from "react-icons/ai";
 import { LanguajeContext } from "../../providers/LanguajeProvider";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import { ExperimentBox } from "../../styles/Experiment.styles";
@@ -21,50 +20,42 @@ export const Experiment = () => {
                     >
                         <fieldset>
                             <legend>
-                                <span className="color-p">04.</span> {languaje.experiments.title}
+                                <span className="color-p">03.</span> {languaje.experiments.title}
                             </legend>
                         </fieldset>
                     </CSSTransition>
                 </SwitchTransition>
-                <SwitchTransition>
-                    <CSSTransition
-                        key={languaje.banner.title}
-                        classNames="fade-left-to-right-1"
-                        addEndListener={(node, done) =>
-                            node.addEventListener("transitionend", done, false)
-                        }
-                    >
-                        <>
 
-                            <div className="list">
-                                {languaje.experiments.experiment.map((exp, i) => (
-                                    <div className="item" key={i}>
-                                        <div className="sup">
-                                            <AiTwotoneExperiment className="icon-left" />
-                                            <ul className="links">
-                                                {exp.links.map((link, i) => (
-                                                    <li key={i}>
-                                                        <a href={link.link} target="_blanck">
-                                                            <link.icon className="icon-right" />
-                                                        </a>
-                                                    </li>
-                                                ))}
-                                            </ul>
+                <div className="list">
+                    {languaje.experiments.experiment.map((experiment, i) =>
+                        <SwitchTransition key={i}>
+                            <CSSTransition
+                                key={languaje.banner.title}
+                                classNames={i % 2 === 0 ? "fade-left-to-right-1" : "fade-right-to-left-1"}
+                                addEndListener={(node, done) =>
+                                    node.addEventListener("transitionend", done, false)
+                                }
+                            >
+
+                                <div className="item" key={i}>
+                                    <div className={`item-experiment ${i % 2 == 0 ? "first-experiment" : "last-experiment"}`}  >
+                                        <div className="experiment">
+                                            <experiment.comp />
                                         </div>
-                                        <h6 className="title">{exp.title}</h6>
-                                        <ul className="tecno">
-                                            {exp.tecnology.map((tecno, i) => (
-                                                <li key={i}>
-                                                    <p>{tecno}</p>
-                                                </li>
-                                            ))}
-                                        </ul>
                                     </div>
-                                ))}
-                            </div>
-                        </>
-                    </CSSTransition>
-                </SwitchTransition>
+
+                                    <div className="item-description" style={{ order: 2 }}>
+                                        <h6>{experiment.title}</h6>
+                                        <p >
+                                            {experiment.description}                                            </p>
+                                    </div>
+                                </div>
+                            </CSSTransition>
+                        </SwitchTransition>
+                    )}
+
+                </div>
+
             </div>
         </ExperimentBox>
     );

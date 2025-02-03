@@ -13,7 +13,7 @@ const ColorsApp = {
   white: "#F5F5F5",
 };
 
-const width = 400;
+const width = 420;
 const height = 600;
 
 
@@ -24,15 +24,30 @@ justify-content:center;
 align-items: center;
 margin: 0;
 padding: 0;
-animation: moveUpDown 4s  infinite;
-animation: moveLeftRight 6s  infinite;   
+//animation: moveUpDown 4s  infinite;
 
+//animation: moveLeftRight 6s  infinite;  
+height: 100%; 
+position: relative;
+overflow: hidden;
+//width: 100%;
+background: 
+radial-gradient(ellipse at center, #ffffff16 0%,  #ffffff16 50%, #060913 100%),
+    linear-gradient(180deg, 
+      #ffa13613 , 
+      #201405c1 ),
+      linear-gradient(45deg, 
+      #4b3621 10%, 
+      #61472a 25%, 
+      #866a5c 50%, 
+      #6b4f32 75%, 
+      #3a2816 90%);
 
-.cassette-container{
-  cursor: pointer;
+.cassette-container,  .background-container-cassette {
+  cursor: auto;
   transform-style: preserve-3d;
   //perspective: 1000px; 
-  transform: rotateX(45deg) rotateY(0deg) rotateZ(-45deg) scale(.32);
+  transform: rotateX(45deg) rotateY(0deg) rotateZ(-45deg) scale(.25);
   //transform: rotateX(100deg) rotateY(0deg) rotateZ(0deg) scale(1);
 
   position: relative;
@@ -43,13 +58,19 @@ animation: moveLeftRight 6s  infinite;
   padding: 0;
   transition: all .5s;
   height: ${height}px;
-  width: ${width}px;
+  //width: 0px;
+  z-index: 2;
 
 }
 
+.background-container-cassette{
+  position: absolute;
+  z-index: 1;
+  
+}
 
-.open{
-  transform: rotateX(8deg) rotateY(12deg) rotateZ(-5deg) scale(1);
+.cassette-container.open,  .background-container-cassette.open{
+  transform: rotateX(8deg) rotateY(12deg) rotateZ(-5deg) scale(.6);
   height: ${height}px;
   cursor: auto;
 
@@ -59,12 +80,27 @@ animation: moveLeftRight 6s  infinite;
 }
 
 
+.background-container-cassette .shadow-cassette {
+  width: ${width}px;
+  height: ${height}px;
+  position: absolute; 
+   
+  background: #1313127f;
+  transform: translateZ(-${(height / 17) + (width / 25)}px);
+  //bottom: -10px;
+  //box-shadow: -${width / 35}px ${width / 35}px 0px 0px #131312;
+  //z-index: 1000; 
+}
+
+
+
+
 .bottom-cassette{
   transition: all .5s;
   position: absolute;
-  width:  ${width}px ;
   overflow: hidden;
-  height: ${height / 15}px ;
+  width:  ${width}px ;
+  height: ${height / 17}px ;
   padding: 0;
   transform: rotateX(90deg) translateZ(0px);
   border-bottom-left-radius: 10px;
@@ -88,12 +124,12 @@ animation: moveLeftRight 6s  infinite;
   position: absolute;
   display: flex;
 
-  width:${height / 15}px ;
+  width:${height / 17}px ;
   height:  ${height}px ;
 
   padding: 0;
   //transform:  rotateZ(135deg) rotateY(202.5deg) rotateX(67.5deg) translateX(-80px) ;
-  transform: rotateY(-90deg)  translateX(${height / -15}px);
+  transform: rotateY(-90deg)  translateX(${height / -17}px);
   left: 0;
   transform-origin: left;
   border-bottom-right-radius: 10px;
@@ -243,8 +279,7 @@ animation: moveLeftRight 6s  infinite;
   width: 100%;
   height: ${height / 14}px;
   //margin: auto;
-  overflow: hidden;
-  
+  overflow: hidden; 
   display: flex;
   //grid-template-columns: 1fr 1fr;
   //grid-template-rows: 1fr;
@@ -255,7 +290,7 @@ animation: moveLeftRight 6s  infinite;
   align-items: center;
   
   //position: relative;
-
+  pointer-events: none;
   border-radius: 10px;
   
   &::after {
@@ -351,7 +386,9 @@ animation: moveLeftRight 6s  infinite;
     height:  ${width / 3.5}px;
   }
 
-.animated .tape {
+.animated .tape { 
+  //transform: rotateZ(360deg);
+  //transition: all 1s;
   animation: spin 6s linear infinite forwards;
   &.right { animation-duration: 3s; }
 }
@@ -487,14 +524,23 @@ animation: moveLeftRight 6s  infinite;
 }
 
 .controls-button{
+  cursor: pointer;
   background-color: ${ColorsApp.brown};
   width: ${height / 24}px;
   height: ${height / 24}px;
   border-radius: 10%;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#553d35;
+  box-sizing: border-box;
+}
+.controls-button:hover{
+  border: #e2e2e2 solid 1px;
 }
 .play{
- 
+  
 }
 .exit{
  
@@ -693,135 +739,106 @@ animation: moveLeftRight 6s  infinite;
 
 @media screen and (max-width: 600px) {
   .cassette-container{
-    transform: rotateX(45deg) rotateY(0deg) rotateZ(-45deg)  scale(0.67);
+    transform: rotateX(45deg) rotateY(0deg) rotateZ(-45deg)  scale(0.25);
         //transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-150px,-300px) scale(1);
 
     }
 
   .open{
-    transform: rotateX(8deg) rotateY(12deg) rotateZ(-5deg) scale(1);
-    height: 480px;
+    transform: rotateX(8deg) rotateY(12deg) rotateZ(-5deg) scale(0.6);
+    height: ${height}px;
     cursor: auto;
   }
         
-.bottom-cassette{
-  height: 50px;
-  width: 310px;
-}
-.left-cassette{
-  height: 480px;
+  .bottom-cassette{
+    width:  ${width}px ;
+    height: ${height / 17}px ;
+  }
 
-  width: 50px;
-  transform: rotateY(-90deg)  translateX(-50px);
-
-}
+  .left-cassette{
+    width:${height / 17}px ;
+    height:  ${height}px ;
+    transform: rotateY(-90deg)  translateX(${height / -17}px);
+  }
 
   .top{
-    height: 100px;
-    width: 600;
+    height: ${height / 5}px;
+    width:${width}px;
   }
-    .key-container {
-      padding: 5px;
-      margin: 0;
-      margin-top: 10px;
-      margin-bottom:20px;
-    }
-    .cassette {
-    width: 280px;
-    padding: 15px;  
-    background-image: 
-    linear-gradient(120deg, rgba(0,0,0, 0.5), rgba(0,0,0, 0.05)), 
-    repeating-linear-gradient(
-        to bottom, 
-        #252525 0 3px, 
-        transparent 3px 7px
-    ),
-    linear-gradient(315deg, rgba(39, 39, 39, 0.25) 25%, transparent 25%),
 
-    radial-gradient(circle at 25% 60px, #111111 25px, transparent 30px),
-    radial-gradient(circle at 50% 60px, #111111 35px, transparent 40px),
-    radial-gradient(circle at 75% 60px, #111111 25px, transparent 30px),
-
-    linear-gradient( 
-        150deg,
-        transparent 14%,
-        rgba(255, 255, 255, 0.1) 15% 25%, 
-        transparent 26% 30%
-        ),
-    radial-gradient(circle at 60% 40%, rgb(131, 131, 131), transparent 60%);
-
-    }
-  .label {
-    padding: 0;
-  }
-    .tape-cassette{
+  .key-container {
     padding: 5px;
+    margin: 0;
+    //margin-top: 10px;
+    //margin-bottom:20px;
   }
+
+  .cassette {
+  width:  ${width - 2 * (width / 15)}px ;
+  height:  ${height - 2 * (width / 15)}px ;
+  //padding: 15px;  
+  
+  }
+  .label {
+    //padding: 0;
+  }
+
+    .tape-cassette{
+    //padding: 5px;
+  }
+
     .text-container{
-    width: 230px;
-    height: 30px;
+      width: 100%;
+      height: ${height / 18}px;
     }
+
     .text-line{
-    width: 220px;
-    height: 2px;
-    bottom: 4px;
+       
+      //height: 2px;
+      bottom: 4px;
     }
+
     .text-marca-line{
-      width: 230px;
-      height: 2px;
+      
+      //height: 2px;
       margin-bottom: 8px;
     }
+
     .central {
-      width: calc(300px / 1.6);
-      height: 40px;
+      //width: calc(300px / 1.6);
+      height: ${height / 14}px;
 
     }
     .axis {
-      width: 25px;
-      height: 25px;
+      width:  ${width / 15}px;
+      height:  ${width / 15}px;
     }
 
     .arc {
-      width: 35px;
-      height: 35px;
-      &::before,
-      &::after {
-        position: absolute;
-        content: "";
-        width: 4px; /* Ajusta el tamaño de las líneas */
-        height: 35px; /* Ajusta el tamaño de las líneas */
-        background:
-        linear-gradient(
-            #aaa 10px,
-            transparent 10px 25px,
-            #aaa 25px 35px
-        );
-        }
+     
     }
     .left {
-      width: 100px;
-      height: 100px;
+      width: ${width / 2.5}px;
+    height: ${width / 2.5}px;
     }
     .right {
-      width: 70px;
-      height: 70px;
+      width:  ${width / 3.5}px;
+    height:  ${width / 3.5}px;
     }
     
     .bottom {
-      background-color: ${ColorsApp.gray};
-      width: calc(280px / 1.5);
-      height: 20px;
-      margin: 10px auto 0px;
+      height:${height / 40}px;      
+      margin: 0px auto ${height / 70}px;
     }
 
     .bottom .inner {
-      width: 120px;
-      height: 30px;
+      width: ${width / 2}px;
+      height: ${height / 25}px;
     }
 
     .button-key {
       width: 50px;
-      height: 65px;
+      height: ${height / 6}px;
       border-radius: 0px 0px 3px 3px;
     }
 
@@ -848,95 +865,78 @@ animation: moveLeftRight 6s  infinite;
 
 
   .cassette-container{
-      transform: rotateX(45deg) rotateY(0deg) rotateZ(-45deg) scale(.6);
+      transform: rotateX(45deg) rotateY(0deg) rotateZ(-45deg) scale(.25);
     }
     .open{
-    transform: rotateX(8deg) rotateY(12deg) rotateZ(-5deg) scale(1);
-    height: 748px;
+    transform: rotateX(8deg) rotateY(12deg) rotateZ(-5deg) scale(.6);
+    height: ${height}px;
     cursor: auto;
   }
 
     .bottom-cassette{
-  height: 70px;
-  width: 490px;
-}
-.left-cassette{
-  height: 748px;
+      width:  ${width}px ;
+      height: ${height / 17}px ;
+  }
+  .left-cassette{
+    width:${height / 17}px ;
+    height:  ${height}px ;
+    transform: rotateY(-90deg)  translateX(${height / -17}px);
 
-  width: 70px;
-  transform: rotateY(-90deg)  translateX(-70px);
-
-}
+  }
     
     .key-container {
     padding: 8px;
     }
     .cassette {
-    width: 450px;
-    height:  calc(var(450px) * 0.6);
-    
+      width:  ${width - 2 * (width / 15)}px ;
+      height:  ${height - 2 * (width / 15)}px ;    
     }
     .text-container{
-    width: 380px;
-    height: 40px;
+      height: ${height / 18}px;
     }
     .text-line{
-    width: 350px;
-    height: 2px;
+      width:  90%;
+      //height: 2px;
     bottom: 8px;
     }
     .text-marca-line{
-    width: 380px;
-    height: 2px;
+      width:  100%;
+      //height: 2px;
     margin: 8px;
     }
     .central {
-    width: calc(520px / 1.6);
-    height: 70px;
+      height: ${height / 14}px;
 
     }
     .axis {
-    width: 40px;
-    height: 40px;
+      width:  ${width / 15}px;
+      height:  ${width / 15}px;
     }
     .arc {
-    width: 55px;
-    height: 55px;
-    &::before,
-    &::after {
-        position: absolute;
-        content: "";
-        width: 8px; /* Ajusta el tamaño de las líneas */
-        height: 50px; /* Ajusta el tamaño de las líneas */
-        background:
-        linear-gradient(
-            #aaa 15px,
-            transparent 15px 35px,
-            #aaa 35px 50px
-        );
-        }
+      width: ${width / 11}px;
+      height:  ${width / 11}px;
     }
+
     .left {
-    width: 155px;
-    height: 155px;
+    width: ${width / 2.5}px;
+    height: ${width / 2.5}px;
     }
     .right {
-        width: 105px;
-        height: 105px;
+      width:  ${width / 3.5}px;
+      height:  ${width / 3.5}px;
     }
 
     
     .bottom {
-    background-color: ${ColorsApp.gray};
-    width: calc(500px / 1.5);
-    height: 30px;}
+      height:${height / 40}px;
+
+    }
     
     .button-key {
       width: 60px;
-      height: 100px;
+      height: ${height / 6}px;
       border-radius: 0px 0px 4px 4px;
 
     }
-}
-
+} 
 `

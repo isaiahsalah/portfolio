@@ -131,6 +131,17 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         font-weight: normal;
     }
+
+    p, .p1, .p2, .p3{
+    text-align: justify; 
+    margin: 0;
+  }
+
+    .p{ font-size: 10px; }
+    .p1{ font-size: 12px; }
+    .p2{ font-size: 14px; }
+    .p3{ font-size: 16px; }
+
     img{
         width: 100%;
     }

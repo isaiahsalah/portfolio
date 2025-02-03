@@ -11,6 +11,7 @@ export const Experience = () => {
     setJob(languaje.experiences.experience[0]);
   }, [languaje.experiences.experience]);
 
+
   return (
     <ExperienceBox className="flex experience" id="experience">
       <div className="flex-area">
@@ -62,7 +63,7 @@ export const Experience = () => {
                 <ul className="job-ul">
                   {languaje.experiences.experience.map((jo, i) => (
                     <li className="job-li" key={i}>
-                      <button className="job-button" onClick={() => setJob(jo)}>{jo.title}</button>
+                      <button className={`job-button ${job.description === jo.description ? "job-selected" : ""}`} onClick={() => setJob(jo)}>{jo.title}</button>
                     </li>
                   ))}
                 </ul>

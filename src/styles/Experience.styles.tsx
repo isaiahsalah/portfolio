@@ -40,12 +40,15 @@ gap: 20px;
         display: flex;
         justify-content: left;
         align-items: center; 
+        opacity: 0.25;
     }
-    button:hover{
+    button:hover{ 
+        opacity: 1;
         margin: 0;
         background:${colors.primary};
         color:${colors.dark};
         font-weight: 900;
+        border: none;
     }
  
     .job-container{
@@ -61,12 +64,12 @@ gap: 20px;
     } 
     .job-nav{ 
         justify-content:space-between;
-        margin: 0px;
-        align-items: center;
+        margin: 0px; 
         text-align: left;
         gap: 10px;  
         display: flex; 
-        height: auto;
+        height: auto; 
+        position: relative; 
     } 
 
     .job-ul{
@@ -76,13 +79,14 @@ gap: 20px;
         margin: 0; 
         display: flex;
         flex-direction: column;
-        flex-grow: 1;
+        flex-grow: 1; 
+        //height: 100%; 
  
         
     }
 
         //Se personaliza la barra de scroll
-        .job-ul::-webkit-scrollbar{
+    .job-ul::-webkit-scrollbar{
         height: 2px;
         background: transparent;
     }
@@ -99,6 +103,10 @@ gap: 20px;
         margin: 0;
         padding: 0;
         flex: 1; 
+    }
+
+    .job-selected{
+opacity: 1;
     }
 
     .job-button{

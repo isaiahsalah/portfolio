@@ -7,14 +7,13 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "generate-sitemap": "ts-node generate-sitemap.ts"
+    "preview": "vite preview"
   },
   "dependencies": {
     "howler": "^2.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.2.1",
+    "react-icons": "^5.4.0",
     "react-transition-group": "^4.4.5",
     "scrollreveal": "^4.0.9",
     "sitemap": "^8.0.0",
