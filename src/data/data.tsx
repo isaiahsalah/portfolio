@@ -63,7 +63,12 @@ const hardSkills = [{
 {
     title: "OpenAI API",
     icon: BiCheckDouble,
-},]
+},
+{
+    title: "Abode Suite",
+    icon: BiCheckDouble,
+},
+]
 
 export const SpanishLanguage: LanguageInterface = {
     title: "Español",
@@ -92,8 +97,8 @@ export const SpanishLanguage: LanguageInterface = {
     ],
     banner: {
         title: "Hola mi nombre es",
-        subtitle: "Desarrollo cosas pa' la web.",
-        description: `Soy ingeniero en sistemas con más de 4 años de experiencia creando soluciones digitales excepcionales. Me especializo en desarrollar productos accesibles y centrados en el usuario, ofreciendo soluciones innovadoras y de impacto. Me mantengo actualizado en las últimas tecnologías para garantizar un trabajo de calidad que se adapta a las necesidades del mercado.`,
+        subtitle: "Diseño y desarrollo cosas",
+        description: `Soy ingeniero en sistemas  y diseñador gráfico con más de 4 años de experiencia creando soluciones digitales excepcionales. Me especializo en desarrollar productos accesibles y centrados en el usuario, ofreciendo soluciones innovadoras y de impacto. Me mantengo actualizado en las últimas tecnologías para garantizar un trabajo de calidad que se adapta a las necesidades del mercado.`,
         button: "Descargar CV",
     },
     about: {
@@ -496,8 +501,8 @@ export const EnglishLanguage: LanguageInterface = {
     ],
     banner: {
         title: "Hi my name is",
-        subtitle: "I develop things for the web.",
-        description: `I’m a systems engineer with 4+ years of experience crafting exceptional digital solutions. I specialize in creating accessible, user-centered products and excel at delivering innovative, impactful solutions. Staying updated on the latest technologies, I ensure high-quality work that adapts to evolving market needs.`,
+        subtitle: "I design and develop things.",
+        description: `I am a Systems Engineer and Graphic Designer with over 4 years of experience creating exceptional digital solutions. I specialize in developing accessible, user-centered products, delivering innovative and impactful results. I stay up to date with the latest technologies to ensure high-quality work that meets market demands.`,
         button: "Download CV",
     },
     about: {

@@ -1,14 +1,31 @@
-import { HTMLAttributes, useContext } from 'react'
+import { HTMLAttributes, useContext, useEffect, useState } from 'react'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import { LanguajeContext } from '../providers/LanguajeProvider';
-import Profile from '../assets/images/perfil.jpg';
+import perfil1 from '../assets/images/perfil1.jpg';
+import perfil2 from '../assets/images/perfil2.jpg';
+import perfil3 from '../assets/images/perfil3.jpg';
 
 interface PerfilProps extends HTMLAttributes<HTMLDivElement> { }
 
+const images = [
+    perfil1,
+    perfil2,
+    perfil3
+];
 
 export const Perfil: React.FC<PerfilProps> = () => {
     const { languaje } = useContext(LanguajeContext);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
+    // Cambiar imagen cada 3 segundos (3000 ms)
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 3000);
+
+        // Limpiar intervalo cuando el componente se desmonte
+        return () => clearInterval(intervalId);
+    }, []);
     return (
         < >
             <SwitchTransition>
@@ -35,12 +52,30 @@ export const Perfil: React.FC<PerfilProps> = () => {
                         node.addEventListener("transitionend", done, false)
                     }
                 >
-                    <div className="back-image">
-                        <img
-                            className='image'
-                            src={Profile}
-                            alt="profile"
-                        ></img>
+                    <div className="container-image">
+
+                        <div className='container-image-profile'>
+                            {images.map((image, index) => (
+                                <img
+                                    key={index}
+                                    className='image-profile'
+                                    src={image}
+                                    alt={`carousel image ${index + 1}`}
+                                    style={{
+                                        position: 'absolute',
+                                        top: 0,
+                                        left: 0,
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'cover',
+                                        transition: 'opacity 2s ease, filter 2s ease',
+                                        opacity: index === currentIndex ? 1 : 0, // Cambia la opacidad
+                                        filter: index === currentIndex ? 'blur(0px)' : 'blur(5px)', // Aplica desenfoque
+                                    }}
+                                />
+                            ))}
+                        </div>
+
                     </div>
                 </CSSTransition>
             </SwitchTransition>

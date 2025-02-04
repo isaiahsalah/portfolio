@@ -8,6 +8,7 @@ min-height: 100vh;
     align-items: center;
     
     color:${colors.alternative};
+    position: relative;  
     
     //titulo Principal
     
@@ -19,25 +20,35 @@ min-height: 100vh;
         flex-wrap: wrap;
         text-align: justify;
         gap: 25px;
+        box-sizing: border-box;
     }
 
     // Foto
-    .back-image{ 
+    .container-image{ 
         display: flex;
-        width: 30%; 
+        width: 40%;  
+        aspect-ratio: 4/4;
         transition: .25s opacity ease-in-out;
         background-image: radial-gradient( circle at 20% 30%, ${colors.primary}, ${colors.dark});
         border-radius: 10px;
         position: relative;
+        box-sizing: border-box;
     } 
-    .image{  
-        opacity: .4;
-        transition: .25s opacity ease-in-out; 
+  
+    .image-profile{   
+        //transition: .25s opacity ease-in-out; 
         border-radius: 10px;
-        filter: saturate(0%);
+        
 
     }
-    .image:hover { 
+    .container-image-profile{
+         width: 100%;
+         height: 100%;
+         transition: .25s opacity ease-in-out;
+        filter: saturate(0%); 
+        opacity: .4;
+    }
+    .container-image-profile:hover { 
         filter: none;
 
         opacity: 1;  
@@ -95,15 +106,24 @@ min-height: 100vh;
     }
 
     // Foto
-    .back-image{
+    .container-image{
         width: 100%;
-    }
-    .image{
-        aspect-ratio: 4/2;
-        object-fit: cover;
-        object-position: 50% 20%;
+        aspect-ratio: 4/3;
 
     }
+    .image-profile{
+        object-position: 50% 20%;
+        animation: grow 1s ease-out forwards;
+    }
+
+    @keyframes grow {
+    0% {
+       opacity: 0; 
+    }
+    100% {
+       opacity: 1;
+    }
+  }
 
     //Skills
     .skills-area{
@@ -137,12 +157,12 @@ min-height: 100vh;
   .description{
         width: 100%;
     }
-    .back-image{
+    .container-image{
         width: 100%;
+        aspect-ratio: 4/2;
+
     }
-    .image{
-        aspect-ratio: 4/3;
-        object-fit: cover;
+    .image-profile{
         object-position: 50% 20%;
 
     }
