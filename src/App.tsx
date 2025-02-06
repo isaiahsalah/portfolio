@@ -4,6 +4,7 @@ import { LoadingScreen } from './pages/LoadingScreen';
 import { GlobalStyle } from './styles/GlobalStyles';
 import { LanguajeProvider } from './providers/LanguajeProvider';
 import { AudioProvider } from './providers/AudioProvider';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,7 +20,7 @@ function App() {
     <LanguajeProvider>
       <AudioProvider>
 
-
+        <Analytics />
         <GlobalStyle />
         {isLoading ? <LoadingScreen /> : <HomeScreen />}
       </AudioProvider>
