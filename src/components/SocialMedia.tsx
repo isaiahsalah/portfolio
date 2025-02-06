@@ -17,7 +17,6 @@ export const SocialMedia = () => {
                     }
                 >
                     <div className='social-media-box'>
-
                         <ul>
                             {MySocialMedia.map((social, i) =>
                                 <li key={i} title={social.title}>
