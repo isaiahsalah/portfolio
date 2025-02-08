@@ -86,6 +86,8 @@ export const ContactBox = styled.div`
     justify-content: center;
     text-align: center;
     font-size: ${fontSize.subTitle1};
+    font-weight: bold;
+    font-family: "Space Mono", serif;
     color: ${colors.primary};
     width: 100%;
     margin: 15px 0;

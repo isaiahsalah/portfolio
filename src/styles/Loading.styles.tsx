@@ -24,6 +24,9 @@ animation: hideLogo 1.5s ease-out forwards 2.5s;
     width: 0ch;
     animation: typing 0.5s steps(3) forwards 0.75s, blink .25s infinite step-end alternate, deleteText 0.35s steps(3) forwards 2s;
     overflow: hidden;
+    font-weight: bold;
+    font-family: "Space Mono", serif;
+
 }
 
 .text-alt{

@@ -113,17 +113,8 @@ min-height: 100vh;
     }
     .image-profile{
         object-position: 50% 20%;
-        animation: grow 1s ease-out forwards;
     }
 
-    @keyframes grow {
-    0% {
-       opacity: 0; 
-    }
-    100% {
-       opacity: 1;
-    }
-  }
 
     //Skills
     .skills-area{

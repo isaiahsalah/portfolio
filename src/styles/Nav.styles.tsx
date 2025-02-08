@@ -170,8 +170,9 @@ export const HeaderBox = styled.nav`
     .logo-movil {
       pointer-events: none;
       font-size: ${fontSize.subTitle2};
+       display: flex;
       font-weight: bold;
-      display: flex;
+    font-family: "Space Mono", serif;
       
     }
     
