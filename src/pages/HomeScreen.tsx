@@ -9,9 +9,20 @@ import { Contact } from "./sections/Contact";
 import { Footer } from "./sections/Footer";
 import createScrollRevealInstance from "../components/MyScrollReveal";
 import Backimage from "../assets/images/socrates.jpg"
+import { useLocation } from "react-router-dom";
 
 export const HomeScreen = () => {
+    const location = useLocation();
 
+    useEffect(() => {
+        if (location.pathname !== "/") {
+            const sectionId = location.pathname.slice(1); // Elimina el "/" para obtener "about", "experience", etc.
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth" }); // Desplazamiento suave
+            }
+        }
+    }, [location]);
 
     useEffect(() => {
         const timer = setTimeout(() => {

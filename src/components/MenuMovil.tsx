@@ -3,6 +3,7 @@ import { BsTranslate } from "react-icons/bs";
 import { LanguajeContext } from "../providers/LanguajeProvider";
 import { BiMenu } from "react-icons/bi";
 import { EnglishLanguage, SpanishLanguage } from "../data/data";
+import { Link } from "react-router-dom";
 
 export const MenuMovil = () => {
     const { languaje, setLanguaje } = useContext(LanguajeContext);
@@ -88,10 +89,10 @@ export const MenuMovil = () => {
             <ul ref={menuRef} style={{ display: isMenuOpen ? 'flex' : 'none' }} className="menu-m" onClick={closeMenu}>
                 {languaje.menu.map((men, i) => (
                     <li className="menu-movil" key={i}>
-                        <a className="menu-a" href={`#${men.link}`}>
+                        <Link className="menu-a" to={`/${men.link}`}>
                             <h6 className="color-p">{`0${i + 1}.`}</h6>
                             <h6 className="menu-title">{men.title}</h6>
-                        </a>
+                        </Link>
                     </li>
                 ))}
 

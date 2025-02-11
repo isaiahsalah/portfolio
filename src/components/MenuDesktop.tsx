@@ -3,6 +3,7 @@ import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import { LanguajeContext } from '../providers/LanguajeProvider';
 import { BsTranslate } from 'react-icons/bs';
 import { EnglishLanguage, SpanishLanguage } from '../data/data';
+import { Link } from 'react-router-dom';
 
 export const MenuDesktop = () => {
     const { languaje, setLanguaje } = useContext(LanguajeContext);
@@ -28,10 +29,10 @@ export const MenuDesktop = () => {
                             }
                         >
 
-                            <a className="menu-a" href={`#${men.link}`}>
+                            <Link className="menu-a" to={`/${men.link}`}>
                                 <p className='color-p'>{`0${i + 1}.`}</p>
                                 <p className="menu-title">{men.title}</p>
-                            </a>
+                            </Link>
 
                         </CSSTransition>
                     </SwitchTransition>
