@@ -51,7 +51,7 @@
 
 # 🫣 Uso
 
-Puedes ver el sitio web en vivo 👉🏻[aquí](https://www.isaias.lat).
+Puedes ver el sitio web en vivo 👉🏻[aquí](https://www.isaiah.lat).
 
 # 👋🏻 Contacto
 
